@@ -11,10 +11,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from sweet device
 $(call inherit-product, device/xiaomi/sweet/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common afterlife stuff.
+AFTERLIFE_VERSION_APPEND_TIME_OF_DAY := true
+AFTERLIFE_BUILD_TYPE := OFFICIAL
+AFTERLIFE_MAINTAINER := Djampt~二十七
+BUILD_AOSP_CAMERA := false
+$(call inherit-product, vendor/afterlife/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_sweet
+PRODUCT_NAME := afterlife_sweet
 PRODUCT_DEVICE := sweet
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 10 Pro
@@ -26,10 +30,10 @@ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 TARGET_FACE_UNLOCK_SUPPORTED := true
 
 # Blur
-TARGET_ENABLE_BLUR := true
+TARGET_SUPPORTS_BLUR := true
 
 # Pixel Stuff
-TARGET_INCLUDE_PIXEL_CHARGER := true
+USE_PIXEL_CHARGING := true
 
 # Quick Tap
 TARGET_SUPPORTS_QUICK_TAP := true
