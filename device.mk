@@ -342,9 +342,11 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # Overlay-RRO
 PRODUCT_PACKAGES += \
+    CarrierConfigOverlay \
     SweetinproSettingsProvider \
     SweetinproWifiOverlay \
-    SweetWifiOverlay
+    SweetWifiOverlay \
+    WifiOverlay
 
 # Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false
